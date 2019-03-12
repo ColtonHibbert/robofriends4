@@ -13,7 +13,8 @@ export const setSearchField = (text) => ({
 
 export const requestRobots = () => (dispatch) => {
     // higher order function, function returns a function
-    // dispatch gets passed in because its an arrow function 
+    // dispatch gets passed in by redux thunk because it a function,?
+    // and not an object like redux normally expects, I think anyway
     // and requestRobots called from inside our mapDispatchToProps 
     dispatch({type: REQUEST_ROBOTS_PENDING});
     fetch("https://jsonplaceholder.typicode.com/users")
